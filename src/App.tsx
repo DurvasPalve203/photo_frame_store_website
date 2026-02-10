@@ -1,8 +1,11 @@
+import Layout from "./components/layout/Layout";
+import Home from "./pages/Home";
+
 function App() {
   return (
-    <div>
-      <h1>Photo Frame Store</h1>
-    </div>
+    <Layout>
+      <Home />
+    </Layout>
   );
 }
 
