@@ -1,3 +1,5 @@
+import Navbar from "./Navbar";
+
 type LayoutProps = {
   children: React.ReactNode;
 };
@@ -5,15 +7,8 @@ type LayoutProps = {
 function Layout({ children }: LayoutProps) {
   return (
     <div>
-      <header>
-        <h2>Photo Frame Store</h2>
-      </header>
-
+      <Navbar />
       <main>{children}</main>
-
-      <footer>
-        <p>&copy; {new Date().getFullYear()} Photo Frame Store</p>
-      </footer>
     </div>
   );
 }
