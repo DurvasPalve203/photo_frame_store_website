@@ -1,8 +1,11 @@
 function Home() {
   return (
     <section>
-      <h1>Welcome to Photo Frame Store</h1>
-      <p>Quality photo frames for every occasion.</p>
+      <h1>Custom Photo Frames for Every Memory</h1>
+      <p>
+        We create high-quality photo frames for homes, offices, and special
+        occasions.
+      </p>
     </section>
   );
 }
