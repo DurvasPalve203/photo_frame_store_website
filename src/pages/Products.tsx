@@ -1,7 +1,9 @@
-const products = [
-  { id: 1, name: "Classic Wooden Frame", price: "₹499" },
-  { id: 2, name: "Premium Gold Frame", price: "₹899" },
-  { id: 3, name: "Modern Black Frame", price: "₹699" },
+import ProductCard, { Product } from "../components/products/ProductCard";
+
+const products: Product[] = [
+  { id: "1", name: "Classic Wooden Frame", price: 499 },
+  { id: "2", name: "Premium Gold Frame", price: 899 },
+  { id: "3", name: "Modern Black Frame", price: 699 },
 ];
 
 function Products() {
@@ -9,13 +11,11 @@ function Products() {
     <section>
       <h1>Our Photo Frames</h1>
 
-      <ul style={{ marginTop: "1rem" }}>
+      <div>
         {products.map((product) => (
-          <li key={product.id} style={{ marginBottom: "0.75rem" }}>
-            <strong>{product.name}</strong> — {product.price}
-          </li>
+          <ProductCard key={product.id} product={product} />
         ))}
-      </ul>
+      </div>
     </section>
   );
 }
