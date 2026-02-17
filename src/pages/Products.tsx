@@ -2,13 +2,15 @@ const products: Product[] = [
   {
     id: "1",
     name: "Classic Wooden Frame",
-    price: 499,
+    price: 449,
+    originalPrice: 499,
     image: "https://via.placeholder.com/300x300",
   },
   {
     id: "2",
     name: "Premium Gold Frame",
-    price: 899,
+    price: 799,
+    originalPrice: 899,
     image: "https://via.placeholder.com/300x300",
   },
   {
