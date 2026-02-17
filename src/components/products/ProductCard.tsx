@@ -4,6 +4,7 @@ export type Product = {
   id: string;
   name: string;
   price: number;
+  originalPrice?: number;
   image?: string;
 };
 
@@ -39,7 +40,14 @@ function ProductCard({ product }: ProductCardProps) {
         </div>
 
         <h3 style={{ margin: "0.25rem 0" }}>{product.name}</h3>
-        <p>₹{product.price}</p>
+        <p>
+  ₹{product.price}
+  {product.originalPrice && (
+    <span style={{ marginLeft: "0.5rem", textDecoration: "line-through", color: "#777" }}>
+      ₹{product.originalPrice}
+    </span>
+  )}
+</p>
       </Link>
     </div>
   );
