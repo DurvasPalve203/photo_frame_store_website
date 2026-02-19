@@ -1,3 +1,5 @@
+import ProductCard, { Product } from "../components/products/ProductCard";
+
 const products: Product[] = [
   {
     id: "1",
@@ -20,3 +22,19 @@ const products: Product[] = [
     image: "https://via.placeholder.com/300x300",
   },
 ];
+
+function Products() {
+  return (
+    <section>
+      <h1>Available Photo Frames</h1>
+
+      <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export default Products;
