@@ -25,9 +25,12 @@ function ProductCard({ product }: ProductCardProps) {
         maxWidth: "220px",
       }}
     >
-      <Link to={`/products/${product.id}`} style={{ textDecoration: "none", color: "inherit" }}>
+      <Link
+        to={`/products/${product.id}`}
+        style={{ textDecoration: "none", color: "inherit" }}
+      >
         {/* Image */}
-        <div style={{ marginBottom: "0.5rem" }}>
+        <div style={{ marginBottom: "0.75rem" }}>
           {product.image ? (
             <img
               src={product.image}
@@ -64,7 +67,7 @@ function ProductCard({ product }: ProductCardProps) {
               color: "#b00020",
               padding: "2px 6px",
               fontSize: "0.75rem",
-              marginBottom: "0.25rem",
+              marginBottom: "0.5rem",
             }}
           >
             Sale
@@ -72,9 +75,9 @@ function ProductCard({ product }: ProductCardProps) {
         )}
 
         {/* Content */}
-        <div style={{ marginTop: "0.5rem" }}>
-          <h3 style={{ margin: "0.25rem 0" }}>{product.name}</h3>
-          <p>
+        <div style={{ marginTop: "0.75rem" }}>
+          <h3 style={{ margin: "0.4rem 0" }}>{product.name}</h3>
+          <p style={{ margin: 0 }}>
             ₹{product.price}
             {hasDiscount && (
               <span
