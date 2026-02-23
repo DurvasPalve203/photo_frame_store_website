@@ -30,22 +30,28 @@ function ProductDetails() {
     return <p>Product not found.</p>;
   }
 
-  return (
-    <section>
+ return (
+  <section style={{ display: "flex", gap: "2rem", marginTop: "1.5rem" }}>
+    <div>
+      <img
+        src={product.image}
+        alt={product.name}
+        style={{ width: "350px", objectFit: "cover" }}
+      />
+    </div>
+
+    <div>
       <h1>{product.name}</h1>
-
-      <div style={{ margin: "1rem 0" }}>
-        <img
-          src={product.image}
-          alt={product.name}
-          style={{ width: "300px", objectFit: "cover" }}
-        />
-      </div>
-
-      <p>Price: ₹{product.price}</p>
-      <p>This is a detailed view of the selected product.</p>
-    </section>
-  );
+      <p style={{ fontSize: "1.2rem", margin: "0.5rem 0" }}>
+        ₹{product.price}
+      </p>
+      <p>
+        This is a detailed description of the product. High-quality material
+        and premium finish.
+      </p>
+    </div>
+  </section>
+);
 }
 
 export default ProductDetails;
