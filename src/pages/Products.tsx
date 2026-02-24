@@ -28,7 +28,14 @@ function Products() {
     <section>
       <h1>Available Photo Frames</h1>
 
-      <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+      <div
+        style={{
+          display: "flex",
+          gap: "1.5rem",
+          flexWrap: "wrap",
+          marginTop: "1.5rem",
+        }}
+      >
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
