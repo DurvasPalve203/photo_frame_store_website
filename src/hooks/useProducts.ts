@@ -12,12 +12,18 @@ export type Product = {
 export function useProducts() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Simulating async fetch
     const timer = setTimeout(() => {
-      setProducts(staticProducts);
-      setLoading(false);
+      try {
+        // Simulated fetch success
+        setProducts(staticProducts);
+      } catch (err) {
+        setError("Failed to load products.");
+      } finally {
+        setLoading(false);
+      }
     }, 500);
 
     return () => clearTimeout(timer);
@@ -30,6 +36,7 @@ export function useProducts() {
   return {
     products,
     loading,
+    error,
     getProductById,
   };
 }
