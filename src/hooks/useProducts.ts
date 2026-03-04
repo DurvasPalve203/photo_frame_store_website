@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { products as staticProducts } from "../lib/products";
+import { fetchProducts } from "../services/productService";
 
 export type Product = {
   id: string;
@@ -15,18 +15,18 @@ export function useProducts() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    async function loadProducts() {
       try {
-        // Simulated fetch success
-        setProducts(staticProducts);
-      } catch (err) {
+        const data = await fetchProducts();
+        setProducts(data as Product[]);
+      } catch {
         setError("Failed to load products.");
       } finally {
         setLoading(false);
       }
-    }, 500);
+    }
 
-    return () => clearTimeout(timer);
+    loadProducts();
   }, []);
 
   const getProductById = (id: string | undefined) => {
