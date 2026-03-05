@@ -20,7 +20,7 @@ export function useProducts() {
         const data = await fetchProducts();
         setProducts(data as Product[]);
       } catch {
-        setError("Failed to load products.");
+        setError("Unable to load products. Please try again later.");
       } finally {
         setLoading(false);
       }
