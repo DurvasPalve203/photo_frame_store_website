@@ -1,10 +1,16 @@
-import { products } from "../lib/products";
+import { products as mockProducts } from "../lib/products";
 
 export async function fetchProducts() {
-  // Simulate async API call
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(products);
-    }, 400);
-  });
+  try {
+    // Future API call will go here
+    // Example:
+    // const response = await fetch("/api/products")
+    // const data = await response.json()
+
+    // Temporary fallback to mock data
+    return mockProducts;
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    throw error;
+  }
 }
