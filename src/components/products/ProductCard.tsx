@@ -21,10 +21,11 @@ function ProductCard({ product }: ProductCardProps) {
     <div
       style={{
         border: "1px solid #ddd",
-        borderRadius: "8px",
-        overflow: "hidden",
-        width: "220px",
-        background: "#fff",
+borderRadius: "8px",
+overflow: "hidden",
+width: "220px",
+background: "#fff",
+transition: "transform 0.2s ease, box-shadow 0.2s ease",
       }}
     >
       <Link
