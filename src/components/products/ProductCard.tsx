@@ -32,32 +32,30 @@ transition: "transform 0.2s ease, box-shadow 0.2s ease",
         to={`/products/${product.id}`}
         style={{ textDecoration: "none", color: "inherit" }}
       >
-        <div>
-          {product.image ? (
-            <img
-              src={product.image}
-              alt={product.name}
-              style={{
-                width: "100%",
-                height: "180px",
-                objectFit: "cover",
-              }}
-            />
-          ) : (
-            <div
-              style={{
-                height: "180px",
-                background: "#f2f2f2",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#777",
-              }}
-            >
-              No Image
-            </div>
-          )}
-        </div>
+<div
+  style={{
+    height: "200px",
+    background: "#f5f5f5",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  }}
+>
+  {product.image ? (
+    <img
+      src={product.image}
+      alt={product.name}
+      style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+      }}
+    />
+  ) : (
+    <span style={{ color: "#aaa" }}>No Image Available</span>
+  )}
+</div>
+
 
         <div style={{ padding: "0.75rem" }}>
           {hasDiscount && (
