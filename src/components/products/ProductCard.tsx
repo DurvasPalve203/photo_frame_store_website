@@ -6,6 +6,7 @@ export type Product = {
   price: number;
   originalPrice?: number;
   image?: string;
+  category?: string;
 };
 
 interface ProductCardProps {
@@ -21,42 +22,44 @@ function ProductCard({ product }: ProductCardProps) {
     <div
       style={{
         border: "1px solid #ddd",
-borderRadius: "8px",
-overflow: "hidden",
-width: "220px",
-background: "#fff",
-transition: "transform 0.2s ease, box-shadow 0.2s ease",
+        borderRadius: "8px",
+        overflow: "hidden",
+        width: "220px",
+        background: "#fff",
+        boxShadow: "0 2px 6px rgba(0,0,0,0.08)",
+        transition: "transform 0.2s ease, box-shadow 0.2s ease",
       }}
     >
       <Link
         to={`/products/${product.id}`}
         style={{ textDecoration: "none", color: "inherit" }}
       >
-<div
-  style={{
-    height: "200px",
-    background: "#f5f5f5",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  }}
->
-  {product.image ? (
-    <img
-      src={product.image}
-      alt={product.name}
-      style={{
-        width: "100%",
-        height: "100%",
-        objectFit: "cover",
-      }}
-    />
-  ) : (
-    <span style={{ color: "#aaa" }}>No Image Available</span>
-  )}
-</div>
+        {/* Image Container */}
+        <div
+          style={{
+            height: "200px",
+            background: "#f5f5f5",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {product.image ? (
+            <img
+              src={product.image}
+              alt={product.name}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+            />
+          ) : (
+            <span style={{ color: "#aaa" }}>No Image Available</span>
+          )}
+        </div>
 
-
+        {/* Content */}
         <div style={{ padding: "0.75rem" }}>
           {hasDiscount && (
             <span
@@ -71,6 +74,20 @@ transition: "transform 0.2s ease, box-shadow 0.2s ease",
             >
               Sale
             </span>
+          )}
+
+          {/* Category */}
+          {product.category && (
+            <p
+              style={{
+                fontSize: "0.75rem",
+                color: "#777",
+                textTransform: "uppercase",
+                marginBottom: "0.25rem",
+              }}
+            >
+              {product.category}
+            </p>
           )}
 
           <h3 style={{ margin: "0.3rem 0" }}>{product.name}</h3>
